@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kai Browser Connector</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 420px;
+      width: 100%;
+    }
+    
+    .logo {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    h1 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+    
+    label {
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    
+    input:focus {
+      border-color: #a78bfa;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+    
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.2s;
+    }
+    
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    }
+    
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      text-align: center;
+    }
+    
+    .status.success {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .status.error {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .instructions {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .instructions h3 {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    
+    .instructions ol {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+    
+    .instructions li {
+      margin-bottom: 4px;
+    }
+    
+    .kai-symbol {
+      color: #a78bfa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">꩜</div>
+    <h1>Kai Browser Connector</h1>
+    <p class="subtitle">Connect your browser to Kai</p>
+    
+    <label for="token">Your Token</label>
+    <input type="text" id="token" placeholder="kai-ash-xxxxxxxx">
+    
+    <button id="save">Connect</button>
+    
+    <div id="status" class="status" style="display: none;"></div>
+    
+    <div class="instructions">
+      <h3>How to use:</h3>
+      <ol>
+        <li>Enter your token above</li>
+        <li>Click Connect</li>
+        <li>Open any webpage</li>
+        <li>Click the <span class="kai-symbol">꩜</span> icon to attach</li>
+        <li>Kai can now see and control that tab!</li>
+      </ol>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
