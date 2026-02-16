@@ -252,7 +252,7 @@ async function detachTab(tabId, reason) {
   setBadge(tabId, 'off')
   void chrome.action.setTitle({
     tabId,
-    title: 'Sunlight Connector (click to connect)',
+    title: 'Kai Connector (click to connect)',
   })
 }
 
